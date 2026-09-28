@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 12mm 12mm;
+  }
+  
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+  }
+  
+  header, nav, aside, .print\:hidden, [role="dialog"], button, .no-print {
+    display: none !important;
+  }
+  
+  #official-final-report {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+  
+  /* Avoid breaking inside sections, tables, and signature blocks */
+  .report-section {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 8px !important;
+  }
+  
+  table {
+    page-break-inside: auto !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+  
+  tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  
+  thead {
+    display: table-header-group !important;
+  }
+  
+  tfoot {
+    display: table-footer-group !important;
+  }
+  
+  /* High contrast table borders in print */
+  .border-black {
+    border-color: #000000 !important;
+  }
+
+  .bg-slate-100 {
+    background-color: #f1f5f9 !important;
+  }
+
+  .bg-slate-200 {
+    background-color: #e2e8f0 !important;
+  }
+
+  .bg-emerald-50 {
+    background-color: #ecfdf5 !important;
+  }
+
+  .bg-rose-50 {
+    background-color: #fff1f2 !important;
+  }
+
+  /* Force loss and profit colors to print crisply */
+  .text-rose-700, .text-rose-600 {
+    color: #b91c1c !important;
+  }
+
+  .text-emerald-700, .text-emerald-800, .text-emerald-900 {
+    color: #047857 !important;
+  }
+}

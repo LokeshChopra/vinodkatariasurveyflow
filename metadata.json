@@ -1,0 +1,6 @@
+{
+  "name": "SurveyFlow",
+  "description": "Intelligent insurance survey and loss assessment text parser, structured data entry, and report generator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
