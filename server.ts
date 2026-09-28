@@ -196,7 +196,7 @@ Return a JSON object with:
     } else if (openrouterKey) {
       // OpenRouter Text model fallback
       try {
-        const scanModel = process.env.SCAN_MODEL || 'google/gemini-2.0-flash-001';
+        const scanModel = process.env.SCAN_MODEL || 'gemini-3.8-flash';
         const orRes = await fetch('https://openrouter.ai/api/v1/chat/completions', {
           method: 'POST',
           headers: {
