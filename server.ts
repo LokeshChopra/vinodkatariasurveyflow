@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { GoogleGenAI } from '@google/genai';
-
 import {
   parsePastedTextRuleBased,
   detectDocumentType,
@@ -2240,38 +2239,16 @@ Return JSON:
   }
 );
 
-
 // ============================================================
-// IMPORTANT NETLIFY CONFIGURATION
+// NETLIFY CONFIGURATION
 // ============================================================
-//
-// DO NOT PUT VITE IMPORTS HERE.
-//
-// Netlify imports:
-//     netlify/functions/api.ts
-//
-// which imports:
-//     app
-//
-// from this file.
-//
-// Therefore this file must only contain the Express API.
-//
-// Local development should run the frontend using:
-//     npm run dev
-//
-// Netlify production serves React from /dist
-// and Express API through Netlify Functions.
-//
+// This file contains ONLY the Express API.
+// Do NOT import Vite here.
+// Do NOT call app.listen() here.
+// Do NOT import serverless-http here.
+// Netlify loads this app through netlify/functions/api.ts.
+// The React frontend is built separately into /dist.
 // ============================================================
 
-
-// Export app only.
-// NO app.listen()
-// NO Vite middleware
-// NO createServer('vite')
-//
-// This prevents Netlify Function bundling from trying to
-// package Vite and @vitejs/devtools.
 
 export default app;
